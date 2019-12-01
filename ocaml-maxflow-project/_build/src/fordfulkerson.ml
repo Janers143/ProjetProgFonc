@@ -71,3 +71,16 @@ let augment_flow graph path =
   in
   loop graph path
 ;;
+
+let ford_fulkerson_algorithm graph start term =
+  let res_graph = build_res_graph graph in
+  let rec loop g s t actual_f =
+    match find_path g s t [] with
+    | None -> (g,actual_f)
+    | Some x -> 
+      let min_f = find_min_flow_path g x in
+      let new_res_graph = augment_flow g x in
+      loop new_res_graph s t (actual_f + min_f)
+  in
+  loop res_graph start term 0
+;;

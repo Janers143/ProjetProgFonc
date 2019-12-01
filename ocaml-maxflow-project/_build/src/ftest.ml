@@ -11,7 +11,6 @@ let () =
       exit 0
     end ;
 
-
   (* Arguments are : infile(1) source-id(2) sink-id(3) outfile(4) *)
 
   let infile = Sys.argv.(1)
@@ -27,6 +26,7 @@ let () =
   (* Test for add_arc *)
   let graph = from_file infile in
   let int_graph = gmap graph int_of_string in
+  (*
   let res_graph = build_res_graph int_graph in
   let path_opt = find_path res_graph _source _sink [] in
   let get_opt = function
@@ -50,9 +50,13 @@ let () =
 
 
   let augment_graph_string = gmap augment_graph string_of_int in
+  *)
+  let (final_graph, max_flow) = ford_fulkerson_algorithm int_graph _source _sink in
+  Printf.printf "Max flow : %s\n%!" (string_of_int max_flow);
 
+  let final_graph_string = gmap final_graph string_of_int in
 
   (* Rewrite the graph that has been read. *)
-  let () = export outfile augment_graph_string in
+  let () = export outfile final_graph_string in
 
   ()
