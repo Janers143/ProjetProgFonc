@@ -15,48 +15,20 @@ let () =
 
   let infile = Sys.argv.(1)
   and outfile = Sys.argv.(4)
-
-  (* These command-line arguments are not used for the moment. *)
   and _source = int_of_string Sys.argv.(2)
   and _sink = int_of_string Sys.argv.(3)
   in
 
   (* Open file *)
-
-  (* Test for add_arc *)
   let graph = from_file infile in
   let int_graph = gmap graph int_of_string in
-  (*
-  let res_graph = build_res_graph int_graph in
-  let path_opt = find_path res_graph _source _sink [] in
-  let get_opt = function
-    | None -> []
-    | Some x -> x
-  in
-  let path = get_opt path_opt in
-  let augment_graph = augment_flow res_graph path in
-  let min_flow = find_min_flow_path res_graph path in
-  let rec string_of_list = function
-    | None -> "Doesn't exist"
-    | Some list -> 
-      begin match list with
-        | [] -> ""
-        | (x :: y :: tail) -> (string_of_int x) ^ " -> " ^ (string_of_list (Some (y :: tail)))
-        | [x]-> string_of_int x
-      end
-  in
-  Printf.printf "%s\n%!" (string_of_list path_opt);
-  Printf.printf "The min flow is : %d\n%!" min_flow;
 
-
-  let augment_graph_string = gmap augment_graph string_of_int in
-  *)
+  (* Execute the Ford-Fulkerson algorithm on the given graph *)
   let (final_graph, max_flow) = ford_fulkerson_algorithm int_graph _source _sink in
   Printf.printf "Max flow : %s\n%!" (string_of_int max_flow);
 
+  (* Write the final residual graph in dot format *)
   let final_graph_string = gmap final_graph string_of_int in
-
-  (* Rewrite the graph that has been read. *)
   let () = export outfile final_graph_string in
 
   ()

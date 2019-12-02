@@ -1,24 +1,28 @@
 ### Starting build.
-# Target: src/ftest.ml.depends, tags: { extension:ml, file:src/ftest.ml, include, ocaml, ocamldep, quiet, traverse }
-/usr/bin/ocamldep -modules src/ftest.ml > src/ftest.ml.depends
+# Target: src/moneysharingtest.ml.depends, tags: { extension:ml, file:src/moneysharingtest.ml, include, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep -modules src/moneysharingtest.ml > src/moneysharingtest.ml.depends
 # Target: src/fordfulkerson.mli.depends, tags: { extension:mli, file:src/fordfulkerson.mli, include, ocaml, ocamldep, quiet, traverse }
-/usr/bin/ocamldep -modules src/fordfulkerson.mli > src/fordfulkerson.mli.depends
+/usr/bin/ocamldep -modules src/fordfulkerson.mli > src/fordfulkerson.mli.depends # cached
 # Target: src/graph.mli.depends, tags: { extension:mli, file:src/graph.mli, include, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep -modules src/graph.mli > src/graph.mli.depends # cached
 # Target: src/graph.cmi, tags: { byte, compile, extension:mli, file:src/graph.mli, include, interf, ocaml, quiet, traverse }
 /usr/bin/ocamlc -c -I src -o src/graph.cmi src/graph.mli # cached
+# Target: src/fordfulkerson.cmi, tags: { byte, compile, extension:mli, file:src/fordfulkerson.mli, include, interf, ocaml, quiet, traverse }
+/usr/bin/ocamlc -c -I src -o src/fordfulkerson.cmi src/fordfulkerson.mli # cached
 # Target: src/gfile.mli.depends, tags: { extension:mli, file:src/gfile.mli, include, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep -modules src/gfile.mli > src/gfile.mli.depends # cached
 # Target: src/gfile.cmi, tags: { byte, compile, extension:mli, file:src/gfile.mli, include, interf, ocaml, quiet, traverse }
 /usr/bin/ocamlc -c -I src -o src/gfile.cmi src/gfile.mli # cached
+# Target: src/moneysharing.mli.depends, tags: { extension:mli, file:src/moneysharing.mli, include, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep -modules src/moneysharing.mli > src/moneysharing.mli.depends # cached
+# Target: src/moneysharing.cmi, tags: { byte, compile, extension:mli, file:src/moneysharing.mli, include, interf, ocaml, quiet, traverse }
+/usr/bin/ocamlc -c -I src -o src/moneysharing.cmi src/moneysharing.mli # cached
 # Target: src/tools.mli.depends, tags: { extension:mli, file:src/tools.mli, include, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep -modules src/tools.mli > src/tools.mli.depends # cached
 # Target: src/tools.cmi, tags: { byte, compile, extension:mli, file:src/tools.mli, include, interf, ocaml, quiet, traverse }
 /usr/bin/ocamlc -c -I src -o src/tools.cmi src/tools.mli # cached
-# Target: src/fordfulkerson.cmi, tags: { byte, compile, extension:mli, file:src/fordfulkerson.mli, include, interf, ocaml, quiet, traverse }
-/usr/bin/ocamlc -c -I src -o src/fordfulkerson.cmi src/fordfulkerson.mli
-# Target: src/ftest.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/ftest.cmo, file:src/ftest.ml, implem, include, ocaml, quiet, traverse }
-/usr/bin/ocamlc -c -I src -o src/ftest.cmo src/ftest.ml
+# Target: src/moneysharingtest.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:src/moneysharingtest.cmo, file:src/moneysharingtest.ml, implem, include, ocaml, quiet, traverse }
+/usr/bin/ocamlc -c -I src -o src/moneysharingtest.cmo src/moneysharingtest.ml
 # Target: src/fordfulkerson.ml.depends, tags: { extension:ml, file:src/fordfulkerson.ml, include, ocaml, ocamldep, quiet, traverse }
 /usr/bin/ocamldep -modules src/fordfulkerson.ml > src/fordfulkerson.ml.depends # cached
 # Target: src/graph.ml.depends, tags: { extension:ml, file:src/graph.ml, include, ocaml, ocamldep, quiet, traverse }
@@ -35,8 +39,12 @@
 /usr/bin/ocamldep -modules src/gfile.ml > src/gfile.ml.depends # cached
 # Target: src/gfile.cmx, tags: { compile, extension:cmx, extension:ml, file:src/gfile.cmx, file:src/gfile.ml, implem, include, native, ocaml, quiet, traverse }
 /usr/bin/ocamlopt -c -I src -o src/gfile.cmx src/gfile.ml # cached
-# Target: src/ftest.cmx, tags: { compile, extension:cmx, extension:ml, file:src/ftest.cmx, file:src/ftest.ml, implem, include, native, ocaml, quiet, traverse }
-/usr/bin/ocamlopt -c -I src -o src/ftest.cmx src/ftest.ml
-# Target: src/ftest.native, tags: { dont_link_with, extension:native, file:src/ftest.native, include, link, native, ocaml, program, quiet, traverse }
-/usr/bin/ocamlopt src/graph.cmx src/tools.cmx src/fordfulkerson.cmx src/gfile.cmx src/ftest.cmx -o src/ftest.native
+# Target: src/moneysharing.ml.depends, tags: { extension:ml, file:src/moneysharing.ml, include, ocaml, ocamldep, quiet, traverse }
+/usr/bin/ocamldep -modules src/moneysharing.ml > src/moneysharing.ml.depends
+# Target: src/moneysharing.cmx, tags: { compile, extension:cmx, extension:ml, file:src/moneysharing.cmx, file:src/moneysharing.ml, implem, include, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt -c -I src -o src/moneysharing.cmx src/moneysharing.ml
+# Target: src/moneysharingtest.cmx, tags: { compile, extension:cmx, extension:ml, file:src/moneysharingtest.cmx, file:src/moneysharingtest.ml, implem, include, native, ocaml, quiet, traverse }
+/usr/bin/ocamlopt -c -I src -o src/moneysharingtest.cmx src/moneysharingtest.ml
+# Target: src/moneysharingtest.native, tags: { dont_link_with, extension:native, file:src/moneysharingtest.native, include, link, native, ocaml, program, quiet, traverse }
+/usr/bin/ocamlopt src/graph.cmx src/tools.cmx src/fordfulkerson.cmx src/gfile.cmx src/moneysharing.cmx src/moneysharingtest.cmx -o src/moneysharingtest.native
 # Compilation successful.

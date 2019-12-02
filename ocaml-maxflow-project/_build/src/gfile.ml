@@ -118,3 +118,46 @@ let export path graph =
 
   close_out ff ;
   ()
+
+
+(* Functions that allows you to read a file in order to solve the money sharing problem *)
+let read_money_sharing_line money_sharing_list line =
+  try Scanf.sscanf line "%s %d" (fun name payed -> ((name,payed) :: money_sharing_list))
+  with e ->
+    Printf.printf "Cannot read line - %s:\n%s\n%!" (Printexc.to_string e) line ;
+    failwith "read_money_sharing_line"
+
+let read_money_sharing_file path =
+  let infile = open_in path in
+  (* Read all lines until end of file. 
+   * n is the current node counter. *)
+  let rec loop money_sharing_list =
+    try
+      let line = input_line infile in
+
+      (* Remove leading and trailing spaces. *)
+      let line = String.trim line in
+
+      let new_money_sharing_list = 
+        if line = "" then money_sharing_list
+        else read_money_sharing_line money_sharing_list line 
+      in
+
+      (*let (n2, graph2) =
+        (* Ignore empty lines *)
+        if line = "" then (n, graph)
+
+        (* The first character of a line determines its content : n or e. *)
+        else match line.[0] with
+          | 'n' -> (n+1, read_node n graph line)
+          | 'e' -> (n, read_arc graph line)
+
+          (* It should be a comment, otherwise we complain. *)
+          | _ -> (n, read_comment graph line)
+        in *)     
+      loop new_money_sharing_list
+
+    with End_of_file -> money_sharing_list (* Done *)
+  in
+  loop []
+
