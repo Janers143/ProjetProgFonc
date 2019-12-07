@@ -38,28 +38,28 @@ sont créés dans le dossier "ocaml-maxflow-project/".
 Une fois que les deux programmes ont été compilés grâce au makefile, on peut exécuter nos deux programmes :
 * ftest :
 
-´´´
+```
 ./ftest.native infile source_id sink_id outfile
-´´´
+```
 
-infile : fichier dans lequel lire le graph au format 1 (*)
+infile : fichier dans lequel lire le graph au format 1¹
 source_id : id du node que nous voulons qui soit consideré comme source dans l'algorithme de
 Ford-Fulkerson
 sink_id : id du node que nous voulons qui soit consideré comme puits dans l'algorithme de
 Ford-Fulkerson
 outfile : fichier dans lequel sera écrit le résultat de l'exécution (le dernier graphe résiduel de 
-l'algorithme de Ford-Fulkerson) au format 2 (*)
+l'algorithme de Ford-Fulkerson) au format 2¹
 
 * moneysharingtest :
 
-´´´
+```
 ./moneysharingtest.native infile outfile
-´´´
+```
 
-infile : fichier dans lequel lire le problème de partage des paiements au format 3 (*)
-outfile : fichier dans lequel sera écrit le résultat de l'exécution au format 4 (*)
+infile : fichier dans lequel lire le problème de partage des paiements au format 3¹
+outfile : fichier dans lequel sera écrit le résultat de l'exécution au format 4¹
 
-(*) Les différents formats sont expliqués par la suite
+¹ : Les différents formats sont expliqués par la suite
 
 ==================================================================================================
 
