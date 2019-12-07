@@ -1,8 +1,8 @@
-#Projet de Programation Fonctionnelle réalisé par Alexandre JAVORNIK et Anthony SALINAS
+# Projet de Programation Fonctionnelle réalisé par Alexandre JAVORNIK et Anthony SALINAS
 
-###############################################################################################################
+====================================================================================================
 
-##Le code est composé de plusieurs modules et de 2 programmes principaux
+## Le code est composé de plusieurs modules et de 2 programmes principaux
 
 Modules :   * Gfile : permet de lire et d'écrire des fichiers de graphes ayant différents formats
             * Graph : définit le type graphe et déclare quelques fonctions utiles à appliquer sur des graphes
@@ -17,9 +17,9 @@ Programmes principaux : * ftest : permet de lancer l'algorithme de Ford-Fulkerso
                         * moneysharingtest : permet de résoudre un problème de partage des paiements entre 
                             plusieurs personnes à partir d'un fichier qu'on lui passe en paramètre
 
-###############################################################################################################
+====================================================================================================
 
-##Comment compiler nos programmes
+## Comment compiler nos programmes
 
     * Option 1 : Ouvrir VSCode/VSCodium dans le dossier "ocaml-maxflow-project/" (ouvrir un terminal dans ce 
         dossier et y rentrer la commande "code ."). Une fois que VSCode est ouvert, les deux programmes seront
@@ -29,9 +29,9 @@ Programmes principaux : * ftest : permet de lancer l'algorithme de Ford-Fulkerso
 Ces deux options conduisent au même résultat : deux exécutables "ftest.native" et "moneysharingtes.native"
 sont créés dans le dossier "ocaml-maxflow-project/".
 
-###############################################################################################################
+====================================================================================================
 
-##Comment exécuter nos programmes
+## Comment exécuter nos programmes
 
 Une fois que les deux programmes ont été compilés grâce au makefile, on peut exécuter nos deux programmes :
     * ftest :
@@ -55,9 +55,9 @@ Une fois que les deux programmes ont été compilés grâce au makefile, on peut
 
 (*) Les différents formats sont expliqués par la suite
 
-###############################################################################################################
+====================================================================================================
 
-##Présentation des formats de fichier utilisés
+## Présentation des formats de fichier utilisés
 
     * Format 1 : Graphes
     ```
@@ -106,6 +106,7 @@ Une fois que les deux programmes ont été compilés grâce au makefile, on peut
     Alex has to pay 10€ to Anthony
     ```
 
-###############################################################################################################
-##Auteurs :
+====================================================================================================
+
+## Auteurs :
 **Alexandre JAVORNIK** et **Anthony SALINAS**
