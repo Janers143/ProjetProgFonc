@@ -9,3 +9,4 @@ format:
 clean:
 	rm -rf _build/
 	rm ftest.native
+	rm moneysharingtest.native

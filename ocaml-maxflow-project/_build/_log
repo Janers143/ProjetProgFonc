@@ -40,11 +40,11 @@
 # Target: src/gfile.cmx, tags: { compile, extension:cmx, extension:ml, file:src/gfile.cmx, file:src/gfile.ml, implem, include, native, ocaml, quiet, traverse }
 /usr/bin/ocamlopt -c -I src -o src/gfile.cmx src/gfile.ml # cached
 # Target: src/moneysharing.ml.depends, tags: { extension:ml, file:src/moneysharing.ml, include, ocaml, ocamldep, quiet, traverse }
-/usr/bin/ocamldep -modules src/moneysharing.ml > src/moneysharing.ml.depends # cached
+/usr/bin/ocamldep -modules src/moneysharing.ml > src/moneysharing.ml.depends
 # Target: src/moneysharing.cmx, tags: { compile, extension:cmx, extension:ml, file:src/moneysharing.cmx, file:src/moneysharing.ml, implem, include, native, ocaml, quiet, traverse }
-/usr/bin/ocamlopt -c -I src -o src/moneysharing.cmx src/moneysharing.ml # cached
+/usr/bin/ocamlopt -c -I src -o src/moneysharing.cmx src/moneysharing.ml
 # Target: src/moneysharingtest.cmx, tags: { compile, extension:cmx, extension:ml, file:src/moneysharingtest.cmx, file:src/moneysharingtest.ml, implem, include, native, ocaml, quiet, traverse }
 /usr/bin/ocamlopt -c -I src -o src/moneysharingtest.cmx src/moneysharingtest.ml # cached
 # Target: src/moneysharingtest.native, tags: { dont_link_with, extension:native, file:src/moneysharingtest.native, include, link, native, ocaml, program, quiet, traverse }
-/usr/bin/ocamlopt src/graph.cmx src/tools.cmx src/fordfulkerson.cmx src/gfile.cmx src/moneysharing.cmx src/moneysharingtest.cmx -o src/moneysharingtest.native # cached
+/usr/bin/ocamlopt src/graph.cmx src/tools.cmx src/fordfulkerson.cmx src/gfile.cmx src/moneysharing.cmx src/moneysharingtest.cmx -o src/moneysharingtest.native
 # Compilation successful.
